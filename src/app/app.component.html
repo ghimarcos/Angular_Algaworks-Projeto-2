@@ -21,16 +21,15 @@
             <button pButton type="submit" label="Pesquisar"></button>
         </div>
     </div>
-
-    <div class="card">
-        <p-table [value]="lancamento" [paginator]="true" [rows]="5">
+    <div class="p-fluid">
+        <p-table [value]="lancamento" [paginator]="true" [rows]="5" [responsive]="true" styleClass="tableStyle">
             <ng-template pTemplate="header">
                 <tr>
                     <th>Pessoa</th>
                     <th>Descrição</th>
-                    <th Class="col-data">Vencimento</th>
-                    <th Class="col-data">Pagamento</th>
-                    <th Class="col-valor">Valor</th>
+                    <th>Vencimento</th>
+                    <th>Pagamento</th>
+                    <th>Valor</th>
                 </tr>
             </ng-template>
             <ng-template pTemplate="body" let-lanc>
@@ -40,18 +39,14 @@
                     <td>{{ lanc.dataVencimento }}</td>
                     <td>{{ lanc.dataPagamento }}</td>
                     <td [ngStyle]="{ color : lanc.tipo == 'DESPESA' ? 'red' : 'blue'}">{{ lanc.valor }}</td>
-                    <div class="col-acoes">
-                        <a pButton type="button" icon="pi pi-pencil"></a>
-                        <button pButton type="button" icon="pi pi-trash" class="col-dis-butt"></button>
-                    </div>
+                    <a pButton type="button" icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top"></a>
+                    <button pButton type="button" icon="pi pi-trash" class="col-dis-butt" pTooltip="Excluir" tooltipPosition="top"></button>
+
                 </tr>
             </ng-template>
         </p-table>
     </div>
-
     <div class="p-m-2">
         <a pButton label="Novo Lançamento"></a>
     </div>
-
-
 </div>
