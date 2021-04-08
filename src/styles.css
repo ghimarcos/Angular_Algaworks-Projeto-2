@@ -10,6 +10,10 @@ label {
     font-weight: bold;
 }
 
+.col-dis-butt {
+    margin: 0 5px;
+}
+
 @media (min-width: 1200px) {
     .container {
         width: 1170px;
@@ -22,5 +26,9 @@ label {
     .col-data {
         width: 170px;
         text-align: right;
+    }
+    .col-acoes {
+        width: 90px;
+        text-align: center;
     }
 }
