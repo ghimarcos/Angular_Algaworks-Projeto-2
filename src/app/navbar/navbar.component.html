@@ -2,7 +2,15 @@
     <div class="container">
         <div class="p-d-inline"></div>
         <div class="p-m-2">
-            <a href="javascript:;" class="navbar-toggle"><i class="pi pi-bars"></i></a>
+            <a href="javascript:;" class="navbar-toggle" (click)="exibindoMenu = !exibindoMenu"><i class="pi pi-bars"></i></a>
         </div>
     </div>
+
+    <ul class="navbar-menu" [hidden]="!exibindoMenu">
+        <li class="navbar-usuario">José da Silva</li>
+        <li class="navbar-menuitem">
+            <a href="#">Lançamentos</a></li>
+        <li class="navbar-menuitem"><a href="#">Pessoas</a></li>
+        <li class="navbar-menuitem"><a href="#">Logout</a></li>
+    </ul>
 </nav>
